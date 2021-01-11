@@ -1,8 +1,25 @@
 #map {
-	height: 75%;
+	height: 500px;
 }
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+}
+h1 {
+	color: #59b16a;
+}
+p {
+	color: #59b16a;
+	text-align: center;
+}
+.form-group {
+	margin: 10px;
+}
+
+.btn-primary {
+	background-color: #0d84d9 !important;
+}
+.table {
+	background-color: #e4f1e8;
 }
