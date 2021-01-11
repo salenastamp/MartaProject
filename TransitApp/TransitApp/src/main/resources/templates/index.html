@@ -7,11 +7,12 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
-  	<div class="container bg-light justify-content-center">
+  	<div class="container">
 		<div class="row">
-			<div class="span6" style="float: none; margin: 0 auto;">
+			<div style="float: none; margin: 0 auto;">
 				<br/>
 				<h1 class="text-center">Find Buses</h1>
+				<p>Please enter your location to find the MARTA buses nearest you</p>
 				<form th:action="@{/buses}" th:object="${request}" method="post" autocomplete="off" class="form-inline">
 			    	<div class="form-group">
 			        	<input type="text" th:field="*{address}" placeholder="Address" class="form-control"/>
@@ -28,7 +29,7 @@
 		</div>
 		<div class="row" th:if="${buses != null and buses.size() > 0}">
 			<div class="col-md-6">
-    		<table class="table table-striped">
+    		<table class="table table-hover">
        			<tr>
             		<th>Route #</th>
             		<th>Bus #</th>
@@ -44,7 +45,7 @@
     		</table>	
 		</div>
 		<div class="text-center" th:if="${buses != null and buses.size() == 0}">
-			<h3>Sorry, there are no nearby buses.</h3>
+			<h1>Sorry, there are no nearby buses.</h1>
 		</div>
 	<div class="col-md-6">
 	<div id="map"></div>
